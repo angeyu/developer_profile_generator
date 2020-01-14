@@ -1,0 +1,17 @@
+{
+  "name": "profile_generator",
+  "version": "1.0.0",
+  "description": "Unit 09 Node.js and ES6+ Homework: Developer Profile Generator",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "html-pdf": "^2.2.0",
+    "inquirer": "^7.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "testy"
+  },
+  "author": "",
+  "license": "ISC"
+}
