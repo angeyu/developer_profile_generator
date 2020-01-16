@@ -29,8 +29,6 @@ user_input()
 .then(function(answers) {
   const username = answers.github;
   const color = answers.color;
-
-
   const queryUrl = `https://api.github.com/users/${username}`;
 
   axios.get(queryUrl).then(function(res) {

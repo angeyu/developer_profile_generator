@@ -27,7 +27,8 @@ const colors = {
 
 function generateHTML(data) {
   //console.log(data);
-  return `<!DOCTYPE html>
+  return `
+  <!DOCTYPE html>
   <html lang="en">
      <head>
         <meta charset="UTF-8" />
@@ -152,7 +153,8 @@ function generateHTML(data) {
              border-radius: 6px;
              background-color: ${colors[data.color].headerBackground};
              color: ${colors[data.color].headerColor};
-             margin: 20px;
+             margin: auto;
+             width: 200px;
            }
            
            .col {
@@ -176,48 +178,27 @@ function generateHTML(data) {
         <body>
         <div class="wrapper">
           <div class="jumbotron jumbotron-fluid">
-              <div class="container mx-auto">
-                  <img src="ihttps://avatars2.githubusercontent.com/u/19614794?v=4" alt="Avatar">
-                <h1 class="display-4"></h1>
-                <p class="lead">Hello! my name is ${data.name}</p>
+              <div class="mx-auto container photo-header h1 img center">
+                  <img src="https://avatars2.githubusercontent.com/u/19614794?v=4" alt="Avatar">
+                <h1>Hello! my name is ${data.name}</h1>
               </div>
             </div>
         <div class="row">
-          
-          <div class="col">
-              I am located at ${data.location}
-  
-          </div>
-          <div class="col">
-              My Github is ${data.url}
-              
-  
-          </div>
-          <div class="col">
-              My blog is ${data.blog}
-              
-  
+          <div class="col col-4 links-nav nav-link">
+              <h5> I am located at ${data.location} </h5>
+              <h5>My Github is <a href="${data.url}">Here</a> </h5>
+              <h5> My blog is <a href="${data.blog}">Here</a> </h5>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            Repos: ${data.repos_url}
-          </div>
-          <div class="col">
-            Followers: ${data.followers}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            Stars: ${data.starred_url}
-          </div>
-          <div class="col">
-            Following: ${data.following}
-          </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+          <div class="col card">Stars: <a href="${data.starred_url}">##</a></div>
+          <div class="col card">Following: ${data.following}</div>
+          <div class="col card">Repos: ${data.public_repos}</div>
+          <div class="col card">Followers: ${data.followers}</div>
         </div>
       </div>
-        </body>
-        </html>
+    </body>
+</html>
       `
         }
 
